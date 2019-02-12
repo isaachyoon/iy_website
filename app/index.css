@@ -1,0 +1,85 @@
+html {
+  font-size: 62.5%; /* Now 10px = 1rem! */
+}
+
+.container {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* display: grid; */
+  /* grid-template-columns: 4rem 5rem auto 5rem 4rem; */
+  /* grid-template-areas: */
+    /* "h1 h1 h1 h1 h1"; */
+}
+
+.outer-card {
+  position: relative;
+  width: 80rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.first-panel {
+  background: linear-gradient(#fff, 90%, #d1d1d1);
+  height: 30rem;
+  flex: 1;
+}
+
+.second-panel {
+  background: linear-gradient(#F3C957, 90%, #F1C752);
+  height: 30rem;
+  flex: 4;
+}
+
+.third-panel {
+  background: linear-gradient(#fff, 90%, #d1d1d1);
+  height: 30rem;
+  flex: 6;
+}
+
+
+.card-shadow {
+  box-shadow: 0 .1rem .3rem rgba(0,0,0,0.12), 0 .1rem .2rem rgba(0,0,0,0.24)
+}
+
+.center-card {
+  position: absolute;
+  width: 50rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.picture-section {
+  background-color: #f6cc4c;
+  flex: 5;
+}
+
+.info-section {
+  padding: 2rem 3rem;
+  flex: 3;
+}
+
+h1 {
+  grid-area: header;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  color: red;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%}
+}
+
+@keyframes blink-caret {
+  from, to {border-color: transparent}
+  50% {border-color: orange}
+}
