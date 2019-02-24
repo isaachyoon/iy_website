@@ -13,190 +13,169 @@ body {
   margin: 0;
   height: 100%;
   display: block;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
 .container {
-  max-width: 90rem;
-  padding: 5rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  /* display: grid; */
-  /* grid-template-columns: 4rem 5rem auto 5rem 4rem; */
-  /* grid-template-areas: */
-    /* "h1 h1 h1 h1 h1"; */
-}
-
-.outer-card {
-  position: relative;
-  width: 80rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.backdrop {
-  position: relative;
-}
-
-.first-panel {
-  background: linear-gradient(#fff, 90%, #d1d1d1);
-  /* height: 30rem; */
-  height: 0rem;
-  flex: 1;
-}
-
-.second-panel {
-  background: linear-gradient(#F3C957, 90%, #F1C752);
-  /* height: 30rem; */
-  left: 7.3rem;
-  position: absolute;
-  width: 29rem;
-  height: 0;
-  /* flex: 4; */
-}
-
-.third-panel {
-  background: linear-gradient(#fff, 90%, #d1d1d1);
-  height: 30rem;
-  flex: 6;
-}
-
-
-
-.card-shadow {
-  box-shadow: 0 .1rem .3rem rgba(0,0,0,0.12), 0 .1rem .2rem rgba(0,0,0,0.24)
-}
-
-.center-card {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-
-  position: absolute;
-  width: 50rem;
-  height: 25rem;
-  display: flex;
-  flex-direction: row;
-  top: 0;
-  left: 0;
-  transform: translate(35%, 11%);
-}
-
-.ease-in {
-  visibility: visible;
-  opacity: 1;
-}
-
-.flow-down {
-  /* width: 50rem; */
-  /* transition: height 4s; */
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
-  -webkit-transition-timing-function: linear;
-}
-
-.picture-section {
-  background-color: #f6cc4c;
-  flex: 5;
-}
-
-.info-section {
-  padding: 2rem 3rem;
-  flex: 3;
-}
-
-label {
-  font-size: 1.1rem;
-  color: #676767;
-}
-
-p {
-  font-size: 1.7rem;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-
-.overlayer {
-  height: 11rem;
-  background: #fff;
-  position: absolute;
-  bottom: 0;
-  width: 45rem;
-}
-
-.yellow-shape {
-  /* position: absolute; */
-  /* left: -3.5rem; */
-  /* border-bottom: 0rem solid #f6cc4ce8; */
-
-  border-bottom: 11rem solid #f6cc4ce8;
-  border-left: 7.3rem solid transparent;
-  border-right: 2.5rem solid transparent;
-  background: linear-gradient(#f6cc4c, 90%, #f3c53b);
-  width: 29rem;
-}
-
-.yellow-backdrop {
-  width: 38.8rem;
-  height: 0rem;
-  /* height: 100rem; */
-  background: #f6cc4c;
-  top: 46rem;
-  left: 8.1rem;
-  position: absolute;
-  margin-left: 1.9rem;
-  background: linear-gradient(#f3c53b, 10%, #f6cc4c);
-  z-index: -1;
-
-}
-
-.project {
-  display: flex;
-  flex-direction: row;
-  padding: 3rem;
-  padding-left: 5rem;
-
-}
-
-.project > img {
-  margin-right: 6rem;
-  width: 38rem;
+  width: 100%;
   height: 100%;
 }
 
-.project > p {
-  margin: auto;
+.portfolio-header {
+  height: 30rem;
 }
 
-h1 {
-  grid-area: header;
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  color: red;
-  animation:
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+nav {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed; */
+  width: 100%;
+  height: 7rem;
+  padding: 1rem;
+  background: #383838;
 }
 
-@keyframes typing {
-  from {width: 0}
-  to {width: 100%}
+.logo > img {
+  width: 7rem;
 }
 
-@keyframes blink-caret {
-  from, to {border-color: transparent}
-  50% {border-color: orange}
+.a-links > a {
+  color: #fff;
+  margin-right: 1rem;
 }
 
-@media only screen and (max-width: 568px) {
-  html {
-    /* font-size: 1.76056338028169vw; */
+.projects {
+  padding: 3rem;
 }
 
+.project-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project {
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* .flipper {
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+} */
+
+.project > img {
+  width: 30rem;
+  filter: grayscale(100%);
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid #383838;
+}
+
+/* .absolute { */
+  /* position: absolute; */
+/* } */
+
+.show-hover {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  visibility: hidden;
+  color: #fff;
+  z-index: 2;
+}
+h3 {
+  font-size: 2.3rem;
+  /* top: 4rem; */
+}
+
+h4 {
+  text-align: center;
+  border: 0.2rem solid #fff;
+  padding: 1rem 0;
+  width: 13rem;
+}
+
+.project:hover img {
+  filter: grayscale(100%) brightness(30%);
+  transition: all 0.3s ease;
+}
+
+.project:hover .show-hover {
+  visibility: visible;
+}
+
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+/* .flip-container, .front, .back {
+	width: 320px;
+	height: 480px;/
+} */
+/* .front, .back, .flip-container{
+  width: 30rem;
+} */
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	/* position: absolute; */
+	/* top: 0; */
+	/* left: 0; */
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  flex-direction: column;
+  height: 30rem;
+  width: 30rem;
+  /* padding: 1rem; */
+}
+
+.back > .header {
+  font-size: 2rem;
+}
+.back > a {
+  color: #1400de
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}

@@ -1,42 +1,28 @@
-let circleRadii = [40, 20, 10];
-
-
-// let arr = ['milk', 'toy', 'poop'];
-// let body = document.querySelector('body')
-// let ul = document.createElement('ul');
-
-// let pArr = document.querySelectorAll('p');
-// console.log(pArr)
-// pArr.forEach((ele) => {
-//   ele.innerHTML += 'say something';
-// })
-
-// body.appendChild(ul);
-
-function applyTransition(ele, cssTransition, arr) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      ele.classList.add(cssTransition);
-      if (arr.length) {
-        ele.style[arr[0]] = arr[1];
-      }
-      resolve()
-    }, 1000)
-  });
+// // console.log(document)
+function flipCard(el) {
+  console.log(el.parentNode.parentNode)
+  el.closest('.flip-container').classList.add('hover');
 }
 
-let first = document.querySelector('.second-panel');
-let second = document.querySelector('.overlayer');
-let third = document.querySelector('.yellow-backdrop');
-let centerCard = document.querySelector('.center-card');
+let descriptionClass = document.querySelectorAll('.description');
+console.log(descriptionClass)
 
-applyTransition(first, 'flow-down', ['height', '30rem'])
-.then(() => {
-  return;
-}).then(() => {
-  return applyTransition(second, 'flow-down', ['height', '0']);
-}).then(() => {
-  return applyTransition(third, 'flow-down', ['height', '100rem']);
-}).then(() => {
-  return applyTransition(centerCard, 'ease-in')
-});
+
+// descriptionClass.forEach((class) => {
+//   class.addEventListener('click', flipCard)
+// })
+
+for (let i = 0; i < descriptionClass.length; i++) {
+  const el = descriptionClass[i];
+  el.addEventListener('click', () => flipCard(el));
+}
+
+let backEle = document.querySelectorAll('.back');
+for (let i = 0; i < backEle.length; i++) {
+  const el = backEle[i];
+  el.addEventListener('click', () => removeFlip(el));
+}
+
+function removeFlip(el) {
+  el.closest('.flip-container').classList.remove('hover');
+}
