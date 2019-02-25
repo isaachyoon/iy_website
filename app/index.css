@@ -8,14 +8,14 @@ html {
 }
 body {
   font-size: 1.6rem;
-  width: 100%;
+  /* width: 100%; */÷
   box-sizing: border-box;
   margin: 0;
   height: 100%;
   display: block;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 300;
 }
-
 
 .container {
   width: 100%;
@@ -23,7 +23,18 @@ body {
 }
 
 .portfolio-header {
-  height: 30rem;
+  height: 58rem;
+}
+
+.header-image {
+  position: relative;
+  padding: 5rem 0;
+  height: 50rem;
+  text-align: center;
+}
+
+.header-image > img{
+  width: 80rem;
 }
 
 nav {
@@ -31,11 +42,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* position: fixed; */
   width: 100%;
   height: 7rem;
   padding: 1rem;
   background: #383838;
+  font-size: 1.4rem;
 }
 
 .logo > img {
@@ -47,18 +58,56 @@ nav {
   margin-right: 1rem;
 }
 
+.vs-code-writing {
+  position: absolute;
+  top: 9.5rem;
+  left: 18.5rem;
+  text-align: left;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #b3b3b3;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.vs-code-writing > p {
+  display: block;
+  overflow: hidden;
+  border-right: .15em solid #b3b3b3;
+  letter-spacing: .15em;
+  white-space: nowrap;
+
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%}
+}
+
+@keyframes blink-caret {
+  from, to {border-color: transparent}
+  50% {border-color:#b3b3b3;}
+}
+
 .projects {
-  padding: 3rem;
+  /* max-width: 1440px; */
+  text-align: center;
+  padding: 1rem 5rem;
 }
 
 .project-row {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .project {
-  width: 30rem;
-  height: 30rem;
+  width: 28rem;
+  height: 28rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -66,15 +115,20 @@ nav {
 
 
 /* .flipper {
-  width: 30rem;
-  height: 30rem;
+  width: 28rem;
+  height: 28rem;
   position: relative;
   display: flex;
   justify-content: center;
 } */
 
-.project > img {
-  width: 30rem;
+
+.project > .image-container {
+  display: flex;
+  align-items: center;
+}
+.project > .image-container > img {
+  width: 28rem;
   filter: grayscale(100%);
 }
 
@@ -82,7 +136,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.2rem solid #383838;
+  /* border: 0.2rem solid #383838; */
 }
 
 /* .absolute { */
@@ -91,7 +145,7 @@ nav {
 
 .show-hover {
   display: flex;
-  padding: 2rem;
+  padding: 6rem 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -101,20 +155,25 @@ nav {
   z-index: 2;
 }
 h3 {
-  font-size: 2.3rem;
+  font-size: 1.9rem;
+  font-weight: 400;
+
   /* top: 4rem; */
 }
 
 h4 {
   text-align: center;
+  font-size: 1.1rem;
   border: 0.2rem solid #fff;
   padding: 1rem 0;
+  font-weight: 400;
   width: 13rem;
+  margin: 0.7rem;
 }
 
-.project:hover img {
-  filter: grayscale(100%) brightness(30%);
-  transition: all 0.3s ease;
+.project:hover .image-container {
+  filter: grayscale(100%) brightness(18%);
+  transition: all 0.5s ease;
 }
 
 .project:hover .show-hover {
@@ -122,7 +181,7 @@ h4 {
 }
 
 .flip-container {
-	perspective: 1000px;
+  perspective: 1000px;
 }
 	/* flip the pane when hovered */
 .flip-container.hover .flipper {
@@ -134,7 +193,7 @@ h4 {
 	height: 480px;/
 } */
 /* .front, .back, .flip-container{
-  width: 30rem;
+  width: 28rem;
 } */
 
 /* flip speed goes here */
@@ -146,7 +205,8 @@ h4 {
 
 /* hide back of pane during swap */
 .front, .back {
-	backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 0.2rem solid #383838;
 	/* position: absolute; */
 	/* top: 0; */
 	/* left: 0; */
@@ -156,16 +216,29 @@ h4 {
   position: absolute;
   top: 0;
   flex-direction: column;
-  height: 30rem;
-  width: 30rem;
+  height: 28rem;
+  width: 28rem;
   /* padding: 1rem; */
 }
 
-.back > .header {
+.back-container {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.back-container > .header {
   font-size: 2rem;
 }
-.back > a {
-  color: #1400de
+.back-container > a {
+  color: #0044ff;
+  font-size: 1.3rem;
+}
+
+.back-container > p {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.3rem;
+  text-align: justify;
 }
 
 /* front pane, placed above back */
@@ -178,4 +251,36 @@ h4 {
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+#about-me {
+  text-align: center;
+}
+
+#lets-connect {
+  text-align: center;
+}
+
+.icons > img {
+  width: 6rem;
+  margin-left: 1rem;
+}
+
+.header-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.section-header::before,
+.section-header::after {
+  content: '------'
+}
+
+@media (min-width: 1200px) {
+  .container {
+
+  }
 }

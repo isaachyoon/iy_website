@@ -17,7 +17,7 @@ for (let i = 0; i < descriptionClass.length; i++) {
   el.addEventListener('click', () => flipCard(el));
 }
 
-let backEle = document.querySelectorAll('.back');
+let backEle = document.querySelectorAll('.return');
 for (let i = 0; i < backEle.length; i++) {
   const el = backEle[i];
   el.addEventListener('click', () => removeFlip(el));
