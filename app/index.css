@@ -58,29 +58,44 @@ nav {
   margin-right: 1rem;
 }
 
-.vs-code-writing {
+#vs-code-writing {
   position: absolute;
   top: 9.5rem;
-  left: 18.5rem;
+  left: 19.2rem;
   text-align: left;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #b3b3b3;
   z-index: 2;
   font-size: 1rem;
+  line-height: 1.4;
 }
 
-.vs-code-writing > p {
-  display: block;
+.image-links {
+  left: 11.6rem;
+  top: 7.6rem;
+  position: absolute;
+  background: #272727;
+}
+
+.image-links > img {
+  border-radius: .3rem;
+  margin-bottom: 1rem;
+  filter: grayscale(100%);
+  width: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.type-writer {
+  width: auto;
+  display: block !important;
   overflow: hidden;
   border-right: .15em solid #b3b3b3;
-  letter-spacing: .15em;
   white-space: nowrap;
-
+  margin: 0;
   animation:
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
-  line-height: 1.4;
-  margin: 0;
 }
 
 @keyframes typing {
