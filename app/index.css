@@ -462,7 +462,11 @@ h4 {
     0 0 1.75rem 1.125rem #0ff; /* outer cyan */
 }
 
-
+.rabbit-cloud {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 @media (min-width: 1200px) {
   .container {
