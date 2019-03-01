@@ -4,32 +4,29 @@ function flipCard(el) {
   el.closest('.flip-container').classList.add('hover');
 }
 
-let descriptionClass = document.querySelectorAll('.description');
-console.log(descriptionClass)
-
-
-// descriptionClass.forEach((class) => {
-//   class.addEventListener('click', flipCard)
-// })
-
-for (let i = 0; i < descriptionClass.length; i++) {
-  const el = descriptionClass[i];
-  el.addEventListener('click', () => flipCard(el));
-}
-
-let backEle = document.querySelectorAll('.return');
-for (let i = 0; i < backEle.length; i++) {
-  const el = backEle[i];
-  el.addEventListener('click', () => removeFlip(el));
-}
-
 function removeFlip(el) {
   el.closest('.flip-container').classList.remove('hover');
 }
 
+function addEventListeners() {
+  let descriptionClass = document.querySelectorAll('.description');
+  for (let i = 0; i < descriptionClass.length; i++) {
+    const el = descriptionClass[i];
+    el.addEventListener('click', () => flipCard(el));
+  }
+
+  let backEle = document.querySelectorAll('.return');
+  for (let i = 0; i < backEle.length; i++) {
+    const el = backEle[i];
+    el.addEventListener('click', () => removeFlip(el));
+  }
+}
+
+addEventListeners();
+
 // set up text to print, each item in array is new line
 let aText = new Array(
-  'Hello there.', 'I am Isaac.', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, click on any of the icons below to connect with me', 'For resume, click on the "resume" button in the corner or just type "resume"',
+  '', 'Hello there.', 'I am Isaac.', '', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, click on any of the icons below to connect with me', 'For resume, click on the "resume" button in the corner or just type "resume"',
   );
   let iSpeed = 50; // time delay of print out
   let iIndex = 0; // start printing array at this posision
@@ -64,6 +61,8 @@ let aText = new Array(
 
 
   typewriter();
+
+  const resume = document.querySelector('#open-resume');
   let captureType = [];
   function captureTyping(e) {
     if (captureType.length > 5) {
@@ -71,7 +70,7 @@ let aText = new Array(
     }
     captureType.push(e.key);
     if (captureType.join('').toLowerCase() === 'resume') {
-      console.log('downloading resume')
+      resume.click();
     }
   }
   window.addEventListener('keydown', captureTyping)

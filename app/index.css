@@ -67,7 +67,7 @@ nav {
   color: #b3b3b3;
   z-index: 2;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .image-links {
@@ -293,6 +293,176 @@ h4 {
 .section-header::after {
   content: '------'
 }
+
+/* My Journey Section */
+.my-story {
+  position: relative;
+  width: 80rem;
+  /* height: 60rem; */
+  margin: 0 auto;
+}
+
+.backdrop {
+  width: 80rem;
+}
+
+.quickdraw {
+  position: absolute;
+  width: 0.65rem;
+}
+
+.quickdraw1 {
+  left: 4.8rem;
+  bottom: 3.4rem;
+  transform: rotate(-48.4deg);
+}
+
+.quickdraw2 {
+  left: 5.1rem;
+  bottom: 10.4rem;
+  transform: rotate(-48.4deg);
+}
+
+.quickdraw3 {
+  left: 9.9rem;
+  bottom: 15.8rem;
+  transform: rotate(-48.2deg);
+}
+
+.quickdraw4 {
+  left: 11.6rem;
+  bottom: 22rem;
+  transform: rotate(-78.6deg);
+}
+
+.quickdraw5 {
+  left: 13.4rem;
+  bottom: 26.4rem;
+  transform: rotate(-35.6deg);
+}
+
+.quickdraw6 {
+  left: 16.5rem;
+  bottom: 31rem;
+}
+
+.quickdraw7 {
+  left: 17.6rem;
+  bottom: 35.1rem;
+  width: 0.8rem;
+}
+
+
+
+.quickdraw1:hover, .quickdraw2:hover, .quickdraw3:hover {
+  transform: rotate(-48.4deg) scale(1.5);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+}
+
+.quickdraw4:hover {
+  transform: rotate(-78.6deg) scale(1.5);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+}
+
+.quickdraw5:hover {
+  transform: rotate(-35.6deg) scale(1.5);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+}
+
+.quickdraw6:hover, .quickdraw7:hover {
+  transform: scale(1.5);
+  transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+}
+
+
+.rock, .climber {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.rock {
+  width: 20rem;
+}
+
+.climber {
+  left: 4rem;
+  width: 14.5rem;
+}
+
+.life-event {
+  position: absolute;
+  display: flex;
+}
+
+.life-event > p {
+  margin: 0;
+  width: 40rem;
+  font-size: 1.3rem;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.life-event1 {
+  display: none;
+  bottom: 2.3rem;
+  left: 7.6rem;
+}
+
+.life-event2 {
+  display: none;
+  bottom: 9rem;
+  left: 9rem;
+}
+
+.life-event3 {
+  display: none;
+  bottom: 14.9rem;
+  left: 13rem;
+}
+
+.life-event4 {
+  display: none;
+  bottom: 21.9rem;
+  left: 15rem;
+}
+
+.life-event5 {
+  display: none;
+  bottom: 25.9rem;
+  left: 19rem;
+}
+
+.quickdraw1:hover + .life-event1 {
+  display: flex;
+}
+
+.quickdraw2:hover + .life-event2 {
+  display: flex;
+}
+
+.quickdraw3:hover + .life-event3 {
+  display: flex;
+}
+
+.quickdraw4:hover + .life-event4 {
+  display: flex;
+}
+
+.quickdraw5:hover + .life-event5 {
+  display: flex;
+}
+
+.glow {
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+    0 0 .75rem .4rem #fff,  /* inner white */
+    0 0 1.25rem .75rem #f0f, /* middle magenta */
+    0 0 1.75rem 1.125rem #0ff; /* outer cyan */
+}
+
+
 
 @media (min-width: 1200px) {
   .container {
