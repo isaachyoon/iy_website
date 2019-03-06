@@ -23,21 +23,21 @@ body {
 }
 
 .portfolio-header {
-  height: 58rem;
+  height: 48rem;
 }
 
 .header-image {
   position: relative;
-  padding: 5rem 0;
   height: 50rem;
   text-align: center;
 }
 
 .header-image > img{
-  width: 80rem;
+  width: 100%;
 }
 
 nav {
+  display: none !important;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ nav {
   width: 100%;
   height: 7rem;
   padding: 1rem;
-  background: #383838;
+  background: #1e1f1c;
   font-size: 1.4rem;
 }
 
@@ -60,21 +60,21 @@ nav {
 
 #vs-code-writing {
   position: absolute;
-  top: 9.5rem;
-  left: 19.2rem;
+  top: 4.9rem;
+  left: 34.9rem;
   text-align: left;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #b3b3b3;
   z-index: 2;
   font-size: 1rem;
-  line-height: 1.45;
+  line-height: 1.59;
 }
 
 .image-links {
-  left: 11.6rem;
-  top: 7.6rem;
+  left: 1rem;
+  top: 6.5rem;
   position: absolute;
-  background: #272727;
+  background: #272822;
 }
 
 .image-links > img {
@@ -108,10 +108,30 @@ nav {
   50% {border-color:#b3b3b3;}
 }
 
+/* CSS FOR PANEL */
+.panel {
+  padding: 6rem 0rem 8rem;
+  width: 100%;
+  background: #E2E2E2;
+  text-align: center;
+}
+
+.panel-header {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.panel-description {
+  width: 89rem;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .projects {
   /* max-width: 1440px; */
   text-align: center;
-  padding: 1rem 5rem;
+  padding: 10rem 5rem;
 }
 
 .project-row {
@@ -129,22 +149,13 @@ nav {
 }
 
 
-/* .flipper {
-  width: 28rem;
-  height: 28rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-} */
-
-
 .project > .image-container {
   display: flex;
   align-items: center;
 }
 .project > .image-container > img {
-  width: 28rem;
-  filter: grayscale(100%);
+  width: 28.2rem;
+  /* filter: grayscale(100%); */
 }
 
 .square {
@@ -202,14 +213,6 @@ h4 {
 .flip-container.hover .flipper {
   transform: rotateY(180deg);
 }
-
-/* .flip-container, .front, .back {
-	width: 320px;
-	height: 480px;/
-} */
-/* .front, .back, .flip-container{
-  width: 28rem;
-} */
 
 /* flip speed goes here */
 .flipper {
@@ -276,6 +279,10 @@ h4 {
   text-align: center;
 }
 
+.icons {
+  padding: 5rem 0;
+}
+
 .icons > img {
   width: 6rem;
   margin-left: 1rem;
@@ -297,16 +304,15 @@ h4 {
 /* My Journey Section */
 .my-story {
   position: relative;
-  width: 80rem;
-  /* height: 60rem; */
-  margin: 0 auto;
+  height: 65.1rem;
 }
 
 .backdrop {
-  width: 80rem;
+  width: 100%;
 }
 
 .quickdraw {
+  display: none;
   position: absolute;
   width: 0.65rem;
 }
@@ -382,13 +388,39 @@ h4 {
 }
 
 .rock {
+  left: -20rem;
   width: 20rem;
 }
 
+.rock-animation {
+  left: 0;
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+   -ms-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+       transition: all 0.7s ease-out;
+}
+
 .climber {
+  display: none;
+  left: -5rem;
+  width: 14.5rem;
+  bottom: -23rem;
+}
+
+.climber-animation {
+  display: flex;
   left: 4rem;
   width: 14.5rem;
+  bottom: 0;
+  transition: visibility 0s, linear;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+   -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+       transition: all 1s ease-out;
 }
+
 
 .life-event {
   position: absolute;
@@ -465,7 +497,24 @@ h4 {
 .rabbit-cloud {
   position: absolute;
   top: 0;
-  right: 0;
+  width: 48rem;
+  right: -50rem;
+
+}
+
+.rabbit-animation {
+  right: 100rem;
+  -webkit-transition: all 100s ease-out;
+  -moz-transition: all 100s ease-out;
+   -ms-transition: all 100s ease-out;
+    -o-transition: all 100s ease-out;
+       transition: all 100s ease-out;
+}
+
+#my-values {
+  position: absolute;
+  top: 12rem;
+  right: 8rem;
 }
 
 @media (min-width: 1200px) {

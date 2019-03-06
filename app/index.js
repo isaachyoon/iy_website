@@ -1,4 +1,5 @@
 // // console.log(document)
+let storyCounter = 0;
 function flipCard(el) {
   console.log(el.parentNode.parentNode)
   el.closest('.flip-container').classList.add('hover');
@@ -6,6 +7,24 @@ function flipCard(el) {
 
 function removeFlip(el) {
   el.closest('.flip-container').classList.remove('hover');
+}
+
+function myStoryAnimation(el) {
+  storyCounter++;
+  if (storyCounter === 1) {
+    const rockEle = document.querySelector('.rock');
+    rockEle.classList.add('rock-animation');
+    const rabbitCloudEle = document.querySelector('.rabbit-cloud');
+  rabbitCloudEle.classList.add('rabbit-animation');
+  } else if (storyCounter === 2) {
+    const quickDraw = document.querySelectorAll('.quickdraw');
+    quickDraw.forEach((ele) => {
+      ele.style.display = 'flex';
+    })
+  } else if (storyCounter === 3) {
+    const climber = document.querySelector('.climber');
+    climber.classList.add('climber-animation');
+  }
 }
 
 function addEventListeners() {
@@ -20,6 +39,10 @@ function addEventListeners() {
     const el = backEle[i];
     el.addEventListener('click', () => removeFlip(el));
   }
+
+  const myStoryElement = document.querySelector('.my-story');
+  myStoryElement.addEventListener('click', () => myStoryAnimation(myStoryElement))
+
 }
 
 addEventListeners();
