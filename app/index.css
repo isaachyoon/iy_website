@@ -119,13 +119,16 @@ nav {
 .panel-header {
   font-size: 5rem;
   margin-bottom: 1rem;
+  font-family: 'EB Garamond', serif;
 }
 
 .panel-description {
-  width: 89rem;
+  width: 72rem;
+  font-family: 'Cairo', sans-serif;
   font-size: 2.5rem;
   text-align: center;
   margin: 0 auto;
+  line-height: 1.4;
 }
 
 .projects {
@@ -283,9 +286,9 @@ h4 {
   padding: 5rem 0;
 }
 
-.icons > img {
-  width: 6rem;
-  margin-left: 1rem;
+.icons img {
+  width: 8rem;
+  margin-left: 4rem;
 }
 
 .header-wrapper {
@@ -305,6 +308,7 @@ h4 {
 .my-story {
   position: relative;
   height: 65.1rem;
+  overflow: hidden;
 }
 
 .backdrop {
@@ -411,28 +415,41 @@ h4 {
 .climber-animation {
   display: flex;
   left: 4rem;
-  width: 14.5rem;
   bottom: 0;
-  transition: visibility 0s, linear;
-  -webkit-transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-   -ms-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-       transition: all 1s ease-out;
+  -webkit-animation: climb 2s ease-out;
+	-moz-animation: climb 2s ease-out;
+  animation: climb 2s ease-out;
+  animation-name: climb;
+  animation-timing-function: steps(6);
 }
 
+
+@-webkit-keyframes climb {
+  0% {
+    left: -5rem;
+    bottom: -23rem;
+  }
+  100% {
+    left: 4rem;
+    bottom: 0;
+  }
+}
 
 .life-event {
   position: absolute;
   display: flex;
+  background: #fcff2f;
 }
 
 .life-event > p {
+  font-family: 'Cairo', sans-serif;
   margin: 0;
   width: 40rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: left;
   padding-left: 1rem;
+  line-height: 1.1;
+  font-weight: 800;
 }
 
 .life-event1 {
@@ -465,27 +482,18 @@ h4 {
   left: 19rem;
 }
 
-.quickdraw1:hover + .life-event1 {
-  display: flex;
-}
-
-.quickdraw2:hover + .life-event2 {
-  display: flex;
-}
-
-.quickdraw3:hover + .life-event3 {
-  display: flex;
-}
-
-.quickdraw4:hover + .life-event4 {
-  display: flex;
-}
-
+.quickdraw1:hover + .life-event1,
+.quickdraw2:hover + .life-event2,
+.quickdraw3:hover + .life-event3,
+.quickdraw4:hover + .life-event4,
 .quickdraw5:hover + .life-event5 {
   display: flex;
+  -webkit-animation: fadeIn 1s ease-out;
+	-moz-animation: fadeIn 1s ease-out;
+	animation: fadeIn 1s ease-out;
 }
 
-.glow {
+.quickdraw::before {
   border-radius: 50%;
   background-color: #fff;
   box-shadow:
@@ -499,22 +507,83 @@ h4 {
   top: 0;
   width: 48rem;
   right: -50rem;
-
+  /* right: 100rem; */
+	-webkit-animation: animateCloud 35s linear infinite;
+	-moz-animation: animateCloud 35s linear infinite;
+	animation: animateCloud 35s linear infinite;
+	/* -webkit-transform: scale(0.65); */
 }
 
-.rabbit-animation {
-  right: 100rem;
-  -webkit-transition: all 100s ease-out;
-  -moz-transition: all 100s ease-out;
-   -ms-transition: all 100s ease-out;
-    -o-transition: all 100s ease-out;
-       transition: all 100s ease-out;
+
+@-webkit-keyframes animateCloud {
+  0% {
+      right: -50rem;
+  }
+  100% {
+      right: 100rem;
+  }
+}
+
+.quickdraw-animation {
+  /* position: absolute; */
+  /* border-radius: 50%; */
+  /* background-color: #fff; */
+  -webkit-animation: quickdraw 1s ease-out infinite;
+	-moz-animation: quickdraw 1s ease-out infinite;
+	animation: quickdraw 1s ease-out infinite;
+}
+
+
+@-webkit-keyframes quickdraw {
+  0% {
+    width: .4rem;
+  }
+  100% {
+    width: .6rem;
+  }
 }
 
 #my-values {
+  display: none;
   position: absolute;
-  top: 12rem;
-  right: 8rem;
+  top: 11rem;
+  right: 34rem;
+  font-size: 2.2rem;
+}
+
+#my-values.show {
+  display: block;
+  -webkit-animation: fadeIn 2s ease-out;
+	-moz-animation: fadeIn 2s ease-out;
+	animation: fadeIn 2s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#my-values > #header {
+  font-size: 2.4rem;
+}
+
+#my-values > a {
+  font-family: 'Cairo', sans-serif;
+  text-decoration: none;
+  color: #000000;
+}
+
+#my-values > a::after {
+  content: '\A';
+  white-space: pre;
+}
+
+#my-values > a:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 1200px) {

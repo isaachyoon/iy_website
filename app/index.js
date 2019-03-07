@@ -16,6 +16,11 @@ function myStoryAnimation(el) {
     rockEle.classList.add('rock-animation');
     const rabbitCloudEle = document.querySelector('.rabbit-cloud');
   rabbitCloudEle.classList.add('rabbit-animation');
+  rabbitCloudEle.addEventListener('transitionend', () => {
+    rabbitCloudEle.classList.remove('rabbit-animation');
+    rabbitCloudEle.style.right = '50rem';
+    rabbitCloudEle.classList.add('rabbit-animation');
+  })
   } else if (storyCounter === 2) {
     const quickDraw = document.querySelectorAll('.quickdraw');
     quickDraw.forEach((ele) => {
@@ -24,6 +29,14 @@ function myStoryAnimation(el) {
   } else if (storyCounter === 3) {
     const climber = document.querySelector('.climber');
     climber.classList.add('climber-animation');
+  } else if (storyCounter === 4) {
+    const myStory = document.querySelector('#my-values');
+    myStory.classList.add('show');
+  } else if (storyCounter === 5) {
+    const quickDraw = document.querySelectorAll('.quickdraw');
+    quickDraw.forEach((ele) => {
+      ele.classList.add('quickdraw-animation');
+    })
   }
 }
 
@@ -49,9 +62,9 @@ addEventListeners();
 
 // set up text to print, each item in array is new line
 let aText = new Array(
-  '', 'Hello there.', 'I am Isaac.', '', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, click on any of the icons below to connect with me', 'For resume, click on the "resume" button in the corner or just type "resume"',
+  '', 'Hello there.', 'I am Isaac.', '', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, click on any of the icons below to connect with me.', 'For resume, click on the "resume" button in the corner or just type "resume"',
   );
-  let iSpeed = 50; // time delay of print out
+  let iSpeed = 20; // time delay of print out
   let iIndex = 0; // start printing array at this posision
   let iArrLength = aText[0].length; // the length of the text array
   let iScrollAt = 20; // start scrolling up at this many lines
@@ -60,27 +73,26 @@ let aText = new Array(
   let sContents = ''; // initialise contents letiable
   let iRow; // initialise current row
 
-  function typewriter()
-  {
-   sContents =  ' ';
-   iRow = Math.max(0, iIndex-iScrollAt);
-   let destination = document.getElementById("vs-code-writing");
+function typewriter() {
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  let destination = document.getElementById("vs-code-writing");
 
-   while ( iRow < iIndex ) {
-    sContents += aText[iRow++] + '<br />';
-   }
-   destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-   if ( iTextPos++ == iArrLength ) {
-    iTextPos = 0;
-    iIndex++;
-    if ( iIndex != aText.length ) {
-     iArrLength = aText[iIndex].length;
-     setTimeout("typewriter()", 500);
-    }
-   } else {
-    setTimeout("typewriter()", iSpeed);
-   }
+  while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
   }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+    iArrLength = aText[iIndex].length;
+    setTimeout("typewriter()", 500);
+  }
+  } else {
+  setTimeout("typewriter()", iSpeed);
+  }
+}
 
 
   typewriter();
@@ -97,4 +109,3 @@ let aText = new Array(
     }
   }
   window.addEventListener('keydown', captureTyping)
-
