@@ -62,7 +62,7 @@ addEventListeners();
 
 // set up text to print, each item in array is new line
 let aText = new Array(
-  '', 'Hello there.', 'I am Isaac.', '', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, click on any of the icons below to connect with me.', 'For resume, click on the "resume" button in the corner or just type "resume"',
+  '', 'Hello there.', 'I am Isaac.', '', 'Welcome to my digital portfolio where you can find my past and current work!', 'If you have any questions, feel free to reach out to me using the navigation or the icons on the left to connect with me.', 'For resume, click on the "resume" icon or just type "resume"',
   );
   let iSpeed = 20; // time delay of print out
   let iIndex = 0; // start printing array at this posision
