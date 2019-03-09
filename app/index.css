@@ -232,6 +232,26 @@ h3 {
   /* top: 4rem; */
 }
 
+.show-hover a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 0.2rem solid #fff;
+  padding: 1rem 0;
+  font-weight: 400;
+  width: 13rem;
+  margin: 0.7rem;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
 h4 {
   text-align: center;
   font-size: 1.1rem;
@@ -413,21 +433,25 @@ h4 {
 .quickdraw1:hover, .quickdraw2:hover, .quickdraw3:hover {
   transform: rotate(-48.4deg) scale(1.5);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+  z-index: 200;
 }
 
 .quickdraw4:hover {
   transform: rotate(-78.6deg) scale(1.5);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+  z-index: 200;
 }
 
 .quickdraw5:hover {
   transform: rotate(-35.6deg) scale(1.5);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+  z-index: 200;
 }
 
 .quickdraw6:hover, .quickdraw7:hover {
   transform: scale(1.5);
   transition: all 0.5s cubic-bezier(0.42, 0, 0.02, 2.17);
+  z-index: 200;
 }
 
 
@@ -469,7 +493,6 @@ h4 {
   animation-timing-function: steps(6);
 }
 
-
 @-webkit-keyframes climb {
   0% {
     left: -5rem;
@@ -477,11 +500,11 @@ h4 {
   }
 
   25% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
   }
 
   50% {
-    transform: rotate (0deg);
+    transform: rotate(-20deg);
   }
   100% {
     left: 4rem;
@@ -489,10 +512,44 @@ h4 {
   }
 }
 
+
+.speech-bubble {
+  display: none;
+  position: absolute;
+  background: #007AFF;
+  border-radius: 1.5em;
+  color: #fff;
+  bottom: 21rem;
+  width: 15rem;
+  left: 21rem;
+  padding: 1rem;
+  text-align: start;
+  padding: 0.2rem 0.2rem 0.2rem 2rem;
+}
+
+.speech-bubble > p {
+  font-family: arial;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 2.5rem solid transparent;
+	border-right-color: #007AFF;
+	border-left: 0;
+	margin-top: -2.5rem;
+	margin-left: -2.5rem;
+}
+
 .life-event {
   position: absolute;
   display: flex;
   background: #fcff2f;
+  padding: 1rem;
 }
 
 .life-event > p {
@@ -536,11 +593,25 @@ h4 {
   left: 19rem;
 }
 
+.life-event6 {
+  display: none;
+  bottom: 30rem;
+  left: 20rem;
+}
+
+.life-event7 {
+  display: none;
+  bottom: 34.9rem;
+  left: 21rem;
+}
+
 .quickdraw1:hover + .life-event1,
 .quickdraw2:hover + .life-event2,
 .quickdraw3:hover + .life-event3,
 .quickdraw4:hover + .life-event4,
-.quickdraw5:hover + .life-event5 {
+.quickdraw5:hover + .life-event5,
+.quickdraw6:hover + .life-event6,
+.quickdraw7:hover + .life-event7 {
   display: flex;
   -webkit-animation: fadeIn 1s ease-out;
 	-moz-animation: fadeIn 1s ease-out;
@@ -601,6 +672,29 @@ h4 {
   }
 }
 
+.glow {
+  content: '';
+  -moz-border-radius: .75rem;
+  -webkit-border-radius: .75rem;
+  border-radius: .75rem;
+  -webkit-animation: quickdraw 3s ease-in-out infinite;
+	-moz-animation: quickdraw 3s ease-in-out infinite;
+	animation: quickdraw 3s ease-in-out infinite;
+  background-color: #69b6d5;
+}
+
+@-webkit-keyframes quickdraw {
+  0% {
+    background-color: #ffff00;
+  }
+  100% {
+    background-color: #00ff9d;
+  }
+}
+
+
+
+
 #my-values {
   display: none;
   position: absolute;
@@ -642,6 +736,31 @@ h4 {
 
 #my-values > a:hover {
   text-decoration: underline;
+}
+
+.mouse {
+  position: absolute;
+  font-family: 'Cairo', sans-serif;
+  top: 5.3rem;
+  left: 49rem;
+}
+
+.mouse > img {
+  width: 8.4rem;
+  -webkit-animation: grow .5s ease-out;
+	-moz-animation: grow .5s ease-out;
+  animation: grow .5s ease-out;
+  /* transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); */
+  animation-iteration-count: 3;
+}
+
+@-webkit-keyframes grow {
+  from {
+    transform: scale(1)
+  }
+  to {
+    transform: scale(1.1)
+  }
 }
 
 @media (min-width: 1200px) {

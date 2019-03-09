@@ -10,34 +10,82 @@ function removeFlip(el) {
 }
 
 function myStoryAnimation(el) {
+  clickDiv.style.display = "none";
   storyCounter++;
   if (storyCounter === 1) {
     const rockEle = document.querySelector('.rock');
     rockEle.classList.add('rock-animation');
-    const rabbitCloudEle = document.querySelector('.rabbit-cloud');
-  rabbitCloudEle.classList.add('rabbit-animation');
-  rabbitCloudEle.addEventListener('transitionend', () => {
-    rabbitCloudEle.classList.remove('rabbit-animation');
-    rabbitCloudEle.style.right = '50rem';
-    rabbitCloudEle.classList.add('rabbit-animation');
-  })
+    timeoutBeforeMouseShows();
   } else if (storyCounter === 2) {
     const quickDraw = document.querySelectorAll('.quickdraw');
     quickDraw.forEach((ele) => {
       ele.style.display = 'flex';
     })
+    timeoutBeforeMouseShows();
   } else if (storyCounter === 3) {
     const climber = document.querySelector('.climber');
     climber.classList.add('climber-animation');
+    timeoutBeforeMouseShows();
   } else if (storyCounter === 4) {
+    addGlowtoQuickdraw();
+    clickDiv.parentNode.removeChild(clickDiv);
     const myStory = document.querySelector('#my-values');
     myStory.classList.add('show');
-  } else if (storyCounter === 5) {
-    const quickDraw = document.querySelectorAll('.quickdraw');
-    quickDraw.forEach((ele) => {
-      ele.classList.add('quickdraw-animation');
-    })
+    const bubbleEle = document.querySelector('.speech-bubble');
+    chatBubbleTimeout(bubbleEle, 3000)
+    .then(() => chatBubbleTimeout(bubbleEle, 5000))
+    .then(() => {
+      chatBubbleInterval(bubbleEle)
+    });
   }
+}
+
+function addGlowtoQuickdraw() {
+  const quickDraw = document.querySelectorAll('.quickdraw');
+
+  quickDraw.forEach((ele) => {
+    ele.classList.add('glow');
+  })
+}
+let chatBubbleOn = false;
+
+
+function chatBubbleTimeout(ele, time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (!chatBubbleOn) {
+        ele.style.display = "block"
+      } else {
+        ele.style.display = 'none';
+      }
+      chatBubbleOn = !chatBubbleOn;
+      resolve();
+    },time)
+  })
+}
+
+function chatBubbleInterval(ele) {
+  ele.style.display = 'none'
+  setInterval(() => {
+    if (!chatBubbleOn) {
+      ele.style.display = "block"
+    } else {
+      ele.style.display = 'none';
+    }
+    chatBubbleOn = !chatBubbleOn;
+  }, 10000)
+}
+
+function timeoutBeforeMouseShows() {
+  window.setTimeout(() => {
+    clickDiv.style.display = "block";
+  }, 3000)
+}
+
+function setIntervalOnElement(ele, time, cssProperty, cssValue) {
+  window.setInterval(() => {
+    ele.style[cssProperty] = cssValue;
+  }, time)
 }
 
 function addEventListeners() {
@@ -93,6 +141,7 @@ function typewriter() {
   setTimeout("typewriter()", iSpeed);
   }
 }
+let clickDiv = document.querySelector('.mouse');
 
 
   typewriter();
