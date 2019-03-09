@@ -289,6 +289,9 @@ h4 {
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
   border: 0.2rem solid #383838;
 	/* position: absolute; */
 	/* top: 0; */
@@ -552,10 +555,16 @@ h4 {
   padding: 1rem;
 }
 
+.life-event > label {
+  font-family: 'Cairo', sans-serif;
+}
+
 .life-event > p {
+  display: flex;
+  align-items: center;
   font-family: 'Cairo', sans-serif;
   margin: 0;
-  width: 40rem;
+  max-width: 40rem;
   font-size: 1.5rem;
   text-align: left;
   padding-left: 1rem;
@@ -673,7 +682,6 @@ h4 {
 }
 
 .glow {
-  content: '';
   -moz-border-radius: .75rem;
   -webkit-border-radius: .75rem;
   border-radius: .75rem;
