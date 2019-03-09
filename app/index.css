@@ -17,13 +17,18 @@ body {
   font-weight: 300;
 }
 
+.return {
+  width: 5rem;
+  font-size: 1.2rem;
+}
+
 .container {
   width: 100%;
   height: 100%;
 }
 
 .portfolio-header {
-  height: 56.5rem;
+  height: 55.7rem;
 }
 
 .header-image {
