@@ -79,7 +79,7 @@ function chatBubbleInterval(ele) {
 function timeoutBeforeMouseShows() {
   window.setTimeout(() => {
     clickDiv.style.display = "block";
-  }, 3000)
+  }, 2000)
 }
 
 function setIntervalOnElement(ele, time, cssProperty, cssValue) {
