@@ -184,6 +184,10 @@ nav {
   line-height: 1.4;
 }
 
+.panel-description > a {
+  color: #000000;
+}
+
 .projects {
   /* max-width: 1440px; */
   text-align: center;

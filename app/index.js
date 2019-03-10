@@ -1,7 +1,5 @@
-// // console.log(document)
 let storyCounter = 0;
 function flipCard(el) {
-  console.log(el.closest('.flip-container'))
   el.closest('.flip-container').classList.add('hover');
 }
 
