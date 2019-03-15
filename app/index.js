@@ -87,6 +87,15 @@ function setIntervalOnElement(ele, time, cssProperty, cssValue) {
 }
 
 function addEventListeners() {
+  // const quickDraw = document.querySelectorAll('.quickdraw');
+  // quickDraw.forEach((el, ind) => {
+  //   el.addEventListener('mouseover', (e) => {
+  //     const lEvent = document.querySelector(`.life-event${ind+1}`)
+  //     console.log(lEvent)
+  //     lEvent.classList.add('show-flex')
+  //   })
+  // })
+
   let descriptionClass = document.querySelectorAll('.description');
   for (let i = 0; i < descriptionClass.length; i++) {
     const el = descriptionClass[i];

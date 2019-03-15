@@ -214,7 +214,9 @@ nav {
   align-items: center;
 }
 .project > .image-container > img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 28.2rem;
+  border-radius: 2rem;
   /* filter: grayscale(100%); */
 }
 
@@ -263,6 +265,10 @@ h3 {
   display: block !important;
 }
 
+.show-flex {
+  display: flex !important;
+}
+
 .hide {
   display: none;
 }
@@ -277,7 +283,9 @@ h4 {
   margin: 0.7rem;
 }
 
-.project:hover .image-container {
+.project:hover .image-container img {
+  border-radius: 2rem;
+  background-color: yellow;
   filter: grayscale(100%) brightness(18%);
   transition: all 0.5s ease;
 }
@@ -307,7 +315,7 @@ h4 {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
    -ms-backface-visibility: hidden;
-  border: 0.2rem solid #383838;
+  /* border: 0.2rem solid #383838; */
 	/* position: absolute; */
 	/* top: 0; */
 	/* left: 0; */
@@ -319,7 +327,8 @@ h4 {
   flex-direction: column;
   height: 28rem;
   width: 28rem;
-  /* padding: 1rem; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2rem;
 }
 
 .back-container {
@@ -638,9 +647,20 @@ h4 {
 .quickdraw6:hover + .life-event6,
 .quickdraw7:hover + .life-event7 {
   display: flex;
-  -webkit-animation: fadeIn 1s ease-out;
-	-moz-animation: fadeIn 1s ease-out;
-	animation: fadeIn 1s ease-out;
+  -webkit-animation: fadeOut 2s ease-out;
+	-moz-animation: fadeOut 2s ease-out;
+  animation: fadeOut 2s ease-out;
+  animation-duration: 4s;
+  animation-timing-function: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .quickdraw::before {
@@ -706,6 +726,7 @@ h4 {
 	animation: quickdraw 3s ease-in-out infinite;
   background-color: #69b6d5;
 }
+
 
 @-webkit-keyframes quickdraw {
   0% {
